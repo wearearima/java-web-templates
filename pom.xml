@@ -4,7 +4,7 @@
 
 	<groupId>eu.arima</groupId>
 	<artifactId>java-web-templates</artifactId>
-	<version>0.0.2-RELEASE</version>
+	<version>0.0.3-RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>java-web-templates</name>
