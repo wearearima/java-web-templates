@@ -2,5 +2,10 @@ language: java
 jdk:
   - oraclejdk8
 install: true
-script: eval ./mvnw package -DskipTests=true -Dmaven.javadoc.skip=true -B -V  
+script: 
+  - eval ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dmaven.javadoc.skip=true -B -V 
+addons:
+  sonarqube:
+    token:
+      secure: "oz2XPwrtVJ5oejYyfnoSOSEl307dPYhRDUSN2KO2A0w8FAcl/EdJ7afhVBdvWlicv0qdjt3jo//PNlGBW4KKlJYdOyLctvDsJiUjQTH0Vlma+Qd3tV+o5R1gnaOnFLuklTML0dGsEikIt0tAJmBuFq/cuh1dSFhKb97nJM4uue08RigZbSxWgomMB64iDKIlWAaB8ilPYCjce9TZ/Wzi0QBtxoOdKerwwCEiht1ojCiJL1vt1QPzY5ds8DZCKsj8KasVpQmqWikqdkz1lNiMDO8SAp3De4BaeJilvq/FNI0Q5JDYzPBwJD/O4enkgPH540jjGBrhyuo3RKN2nMezlauA4CCPKL+CKf6E7HS/r5Qfw6eod/3eRP1JeQ+XDx4ZKM87qSjxZDwCWBg16pLf2cwHR/9BfHlYapTnPP//EnlWLL3IeukhF9pX4/1UuP1pUuo5t7APk3/9y5m+a0t6adwuJyRtG2v+g3zoLVkK0pEtECVJTQQ+OPkczqKFPhbmsH6D2YWSyClYP/AACb+KCm/Av7B1lqFC837EO5mV586GXPkVI+UIfG4XbstvGHPcyjQDS5+TOPLnHFg1JwPTxX47mv1Yjkop2wfAD7BOAduTWvveQr6iCC0fv9HDQ2brSH59aD95uspRxa1sN9/KIerBgfODZ9s+2/fr7PlZaAg="
 
