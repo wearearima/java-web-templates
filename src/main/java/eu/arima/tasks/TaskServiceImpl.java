@@ -15,7 +15,12 @@ class TaskServiceImpl implements TaskService {
 		List<Task> tasks = new ArrayList<>();
 		
 		for (int i=0; i<pageable.getPageSize(); i++) {
-			tasks.add(new Task((long) i, "name" + i, new Date(), new Date(), Priority.HIGH));
+			Priority priority = Priority.LOW;
+			if (i%2==0) {
+				priority = Priority.HIGH;
+			}
+			
+			tasks.add(new Task((long) i, "name" + i, new Date(), new Date(), priority));
 		}
 		return tasks;
 	}

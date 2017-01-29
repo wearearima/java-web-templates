@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="eu.arima.tasks.Priority" %>
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -31,7 +32,18 @@
 					<tr>
 						<td><c:out value="${task.id}" /></td>
 						<td><c:out value="${task.name}" /></td>
-						<td><c:out value="${task.priority}" /></td>
+						<td>
+							<c:choose>
+								<c:when test="${task.priority == Priority.HIGH}">
+									<b>
+										<c:out value="${task.priority}" />
+									</b>
+								</c:when>
+								<c:otherwise>
+									<c:out value="${task.priority}" />
+								</c:otherwise>
+							</c:choose>
+						</td>
 						<td><c:out value="${task.creationDate}" /></td>
 						<td><c:out value="${task.finishDate}" /></td>
 					</tr>
