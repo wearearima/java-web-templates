@@ -1,5 +1,6 @@
 package eu.arima;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,22 +19,22 @@ public class TemplatesController {
 	}
 
 	@GetMapping("/jsp")
-	public String jsp(Model model) {
-		model.addAttribute(taskService.findAll());
+	public String jsp(Model model, Pageable pageable) {
+		model.addAttribute(taskService.find(pageable));
 		
 		return "jsp/taskList";
 	}
 	
 	@GetMapping("/thymeleaf")
-	public String thymeleaf(Model model) {
-		model.addAttribute(taskService.findAll());
+	public String thymeleaf(Model model, Pageable pageable) {
+		model.addAttribute(taskService.find(pageable));
 		
 		return "thymeleaf/taskList";
 	}
 	
 	@GetMapping("/mustache")
-	public String mustache(Model model) {
-		model.addAttribute(taskService.findAll());
+	public String mustache(Model model, Pageable pageable) {
+		model.addAttribute(taskService.find(pageable));
 		
 		return "mustache/taskList";
 	}

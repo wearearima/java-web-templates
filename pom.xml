@@ -21,6 +21,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<list.size>30</list.size>
 	</properties>
 
 	<dependencies>
@@ -41,6 +42,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-commons</artifactId>
 		</dependency>
 		
 		<!-- jsp dependencies -->
@@ -99,6 +105,9 @@
 						<configuration>
 							<testResultsTimestamp>false</testResultsTimestamp>
 							<ignoreResultFailures>true</ignoreResultFailures>
+							<propertiesUser>
+								<listSize>${list.size}</listSize>
+							</propertiesUser> 
 						</configuration>
 					</plugin>
 					<plugin>
