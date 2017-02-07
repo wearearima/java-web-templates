@@ -29,7 +29,15 @@
 				<tr>
 					<td>{{id}}</td>
 					<td>{{name}}</td>
+					
+					{{#highPriority}}
+					<td><b>{{priority}}</b></td>
+					{{/highPriority}}
+					
+					{{^highPriority}}
 					<td>{{priority}}</td>
+					{{/highPriority}}
+					
 					<td>{{creationDate}}</td>
 					<td>{{finishDate}}</td>
 				</tr>
