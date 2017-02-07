@@ -11,46 +11,37 @@ import eu.arima.tasks.Task;
  */
 public class MustacheTask {
 
-	private final long id;
+	private final Task task;
 	
-	private final String name;
-	
-	private final Date creationDate;
-	
-	private final Date finishDate;
-	
-	private final Priority priority;
+	private final boolean highPriority;
 
 	public MustacheTask(Task task) {
-		this.id = task.getId();
-		this.name = task.getName();
-		this.creationDate = task.getCreationDate();
-		this.finishDate = task.getFinishDate();
-		this.priority = task.getPriority();
+		this.task = task;
+		this.highPriority = Priority.HIGH.equals(task.getPriority());
 	}
 	
 	public long getId() {
-		return this.id;
+		return this.task.getId();
 	}
 
 	public String getName() {
-		return this.name;
+		return this.task.getName();
 	}
 
 	public Date getCreationDate() {
-		return this.creationDate;
+		return this.task.getCreationDate();
 	}
 
 	public Date getFinishDate() {
-		return this.finishDate;
+		return this.task.getFinishDate();
 	}
 
 	public Priority getPriority() {
-		return this.priority;
+		return this.task.getPriority();
 	}
 
 	public boolean getHighPriority() {
-		return Priority.HIGH.equals(this.priority);
+		return this.highPriority;
 	}
 	
 }

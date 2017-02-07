@@ -27,19 +27,19 @@
 			<tbody>
 				{{#taskList}}
 				<tr>
-					<td>{{id}}</td>
-					<td>{{name}}</td>
+					<td>{{task.id}}</td>
+					<td>{{task.name}}</td>
 					
 					{{#highPriority}}
-					<td><b>{{priority}}</b></td>
+					<td><b>{{task.priority}}</b></td>
 					{{/highPriority}}
 					
 					{{^highPriority}}
-					<td>{{priority}}</td>
+					<td>{{task.priority}}</td>
 					{{/highPriority}}
 					
-					<td>{{creationDate}}</td>
-					<td>{{finishDate}}</td>
+					<td>{{task.creationDate}}</td>
+					<td>{{task.finishDate}}</td>
 				</tr>
 				{{/taskList}}
 			</tbody>
