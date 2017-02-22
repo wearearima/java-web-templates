@@ -7,8 +7,8 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
-        <link rel="stylesheet" href="css/normalize.min.css"/>
-        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="/css/normalize.min.css"/>
+        <link rel="stylesheet" href="/css/main.css"/>
     </head>
     <body>
 
@@ -28,7 +28,7 @@
 				<tr th:each="task : ${taskList}">
 					<td th:text="${task.id}"></td>
 					<td th:text="${task.name}"></td>
-					<td th:text="${task.priority}"></td>
+					<td th:text="${task.priority}" th:class="${task.priority == T(eu.arima.tasks.Priority).HIGH} ? 'high' : ''"></td>
 					<td th:text="${task.creationDate}"></td>
 					<td th:text="${task.finishDate}"></td>
 				</tr>

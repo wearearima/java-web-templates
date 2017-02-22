@@ -10,8 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/css/normalize.min.css">
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
 
@@ -32,17 +32,12 @@
 					<tr>
 						<td><c:out value="${task.id}" /></td>
 						<td><c:out value="${task.name}" /></td>
-						<td>
-							<c:choose>
-								<c:when test="${task.priority == Priority.HIGH}">
-									<b>
-										<c:out value="${task.priority}" />
-									</b>
-								</c:when>
-								<c:otherwise>
-									<c:out value="${task.priority}" />
-								</c:otherwise>
-							</c:choose>
+						<c:set var="clazz" value=" " />
+						<c:if test="${task.priority == Priority.HIGH}">
+							<c:set var="clazz" value="high" />
+						</c:if>
+						<td class="${clazz}">
+							<c:out value="${task.priority}" />
 						</td>
 						<td><c:out value="${task.creationDate}" /></td>
 						<td><c:out value="${task.finishDate}" /></td>
